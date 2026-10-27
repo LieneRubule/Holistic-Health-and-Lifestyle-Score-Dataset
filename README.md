@@ -3,6 +3,14 @@
 
 *Measuring Holistic Lifestyles and Wellbeing* is a collaborative analysis to address hypothetical research questions concerning holistic lifestyle and wellbeing factors. The project is an end-to-end simulation of the strengths and implications on healthcare decisions combining exploratory data analysis, statistical theory and machine learning to examine relationships between lifestyle indicators and synthetic health scores.
 
+## **<u>Stakeholder Summary</u>**
+
+The analysis demonstrates how data analytics can identify patterns and evaluate predictive models while highlighting the limitations of reducing complex human wellbeing to a numerical score.
+
+For stakeholders, *Measuring Holistic Lifestyles and Wellbeing*  illustrates the importance of transparent scoring methods, appropriate model evaluation and human oversight when interpreting health-related data. 
+
+Although this project uses synthetic data to explore relationships between lifestyle factors and overall health scores, applying a similar approach to verified real-world data could help public health researchers identify health trends, healthcare providers understand behavioural risk factors, and wellbeing organisations develop targeted prevention programmes to address lifestyle-related health patterns.
+
 ## **<u>Dataset</u>**
 
 **Dataset Used:** Holistic Health & Lifestyle Score Dataset 
