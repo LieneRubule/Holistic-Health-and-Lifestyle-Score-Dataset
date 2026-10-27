@@ -1,4 +1,9 @@
-# ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# <u>Measuring Holistic Lifestyles and Wellbeing</u>
+## Synthetic Data-Driven Insights for Human-Centred Research 
+
+*Measuring Holistic Lifestyles and Wellbeing* is a collaborative analysis to address hypothetical research questions concerning holistic lifestyle and wellbeing factors. The project is an end-to-end simulation of the strengths and implications on healthcare decisions combining exploratory data analysis, statistical theory and machine learning to examine relationships between lifestyle indicators and synthetic health scores.
+
+
 
 ## Template Instructions
 
