@@ -5,15 +5,13 @@
 
 ## **<u>Dataset</u>**
 
-**Dataset Used:** Holistic Health & Lifestyle Score Dataset 
+- **Dataset:** Holistic Health & Lifestyle Score Dataset
+- **Creator:** Arif Miah (Kaggle username: miadul)
+- **Source:** [Kaggle dataset page](https://www.kaggle.com/datasets/miadul/holistic-health-and-lifestyle-score-dataset)
+- **Download date:** [26/10/2026]
+- **Licence:** [CC0 1.0 Universal — Public Domain](https://creativecommons.org/publicdomain/zero/1.0/)
 
-**Source:** Kaggle - Synthetic datset supplied for educational and analytical usage. 
-
-**License:** CC0 1.0 Universal
-
-**Dataset Link:** https://www.kaggle.com/datasets/miadul/holistic-health-and-lifestyle-score-dataset
-
-**Format:** CSV (Comma-Separated Values)
+The licence permits copying, modification and redistribution. The creator and source are acknowledged for transparency.
 
 **Columns:**
 - <code>Physical_Activity</code> - Minutes of moderate to vigorous exercise per day (0–120)
