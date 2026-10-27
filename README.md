@@ -1,7 +1,9 @@
 # <u>Measuring Holistic Lifestyles and Wellbeing</u>
 ## Synthetic Data-Driven Insights for Human-Centred Research 
 
-*Measuring Holistic Lifestyles and Wellbeing* is a collaborative analysis to address hypothetical research questions concerning holistic lifestyle and wellbeing factors. The project is an end-to-end simulation of the strengths and implications on healthcare decisions combining exploratory data analysis, statistical theory and machine learning to examine relationships between lifestyle indicators and synthetic health scores.
+*Measuring Holistic Lifestyles and Wellbeing* is a collaborative team analysis to address hypothetical research questions concerning holistic lifestyle and wellbeing factors. 
+
+The project uses an end-to-end analytical approach by combining exploratory data analysis, statistical methods and machine learning to investigate relationships between lifestyle indicators and synthetic health scores, while examining the potential benefits, limitations and ethical implications of using data-driven insights to inform healthcare decisions.
 
 ## **<u>Stakeholder Summary</u>**
 
@@ -44,6 +46,23 @@ Although this project uses synthetic data to explore relationships between lifes
 
 **Limits:** Dataset is synthetic. Its variable definitions, measurement scales and score metric method require verification. The analysis descibes patterns in the generated data and should not be interpreted as established relationships for real-world populations or used for individual health assessments. 
 
+## **<u>Project Plan</u>**
+
+**Data Collection** – A synthetic health and lifestyle dataset is loaded for analysis. Each record represents a simulated individual, with physical and lifestyle indicators alongside an Overall Health Score and categorical Health Status.
+
+**Data Cleaning and Preperation** – Data integrity is assessed before analysis by inspecting the dataset's structure, standardising column names where necessary, checking data types, and validating missing values, duplicate records and numerical ranges. The overall health scores are checked against the supplied scoring formula. The validated dataset is exported for subsequent analysis.
+
+**Exploratory Data Analysis (EDA)** – Relationships between lifestyle indicators and overall health scores are explored using Pandas, NumPy, Matplotlib and Seaborn. 
+
+**Statistical Analysis** – Descriptive statistics and appropriate statistical tests are used to investigate differences and associations between lifestyle indicators and overall health scores.
+
+**Feature Engineering** – The validated dataset is prepared for machine learning by selecting relevant lifestyle variables and defining the target variable. The relationship between the input variables, Overall Health Score and Health Status is examined to identify potential target leakage. Features are selected with consideration of the scoring methodology and the limitations of predicting a formula-derived outcome.
+
+**Machine-Learning Model** – Select Machine-Learning model following EDA. Train/Test and evaluate model performance.
+
+**Dashboard Creation** – An interactive dashboard presents the main findings through visualisations of lifestyle indicators, overall health score distributions and health-status categories. 
+
+**Ethical Considerations** - Throughout the workflow, attention is given to the implications of reducing complex wellbeing to numerical scores. The project distinguishes between patterns within synthetic data and evidence derived from real populations, highlighting the limitations of formula-based scores, inferred health-status thresholds and predictive modelling. The findings are intended for educational and exploratory purposes, not clinical assessment or healthcare decision-making.
 
 ## Template Instructions
 
