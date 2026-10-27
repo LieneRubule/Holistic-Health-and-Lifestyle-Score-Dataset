@@ -1,4 +1,41 @@
-# ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# <u>Measuring Holistic Lifestyles and Wellbeing</u>
+## Synthetic Data-Driven Insights for Human-Centred Research 
+
+*Measuring Holistic Lifestyles and Wellbeing* is a collaborative analysis to address hypothetical research questions concerning holistic lifestyle and wellbeing factors. The project is an end-to-end simulation of the strengths and implications on healthcare decisions combining exploratory data analysis, statistical theory and machine learning to examine relationships between lifestyle indicators and synthetic health scores.
+
+## **<u>Dataset</u>**
+
+**Dataset Used:** Holistic Health & Lifestyle Score Dataset 
+
+**Source:** Kaggle - Synthetic datset supplied for educational and analytical usage. 
+
+**License:** CC0 1.0 Universal
+
+**Dataset Link:** https://www.kaggle.com/datasets/miadul/holistic-health-and-lifestyle-score-dataset
+
+**Format:** CSV (Comma-Separated Values)
+
+**Columns:**
+- <code>Physical_Activity</code> - Minutes of moderate to vigorous exercise per day (0–120)
+
+- <code>Nutrition_Score</code> - Diet quality (0–10) based on nutrient density, balance and variety
+
+- <code>Stress_Level</code> - Self-reported stress (1–10), where 10 = very high stress
+
+- <code>Mindfulness</code> - Minutes per day spent in meditation, journaling, or mindful activity (0–60)
+
+- <code>Sleep_Hours</code> - Average hours of sleep per night (3–10)
+
+- <code>Hydration</code> - Liters of water consumed per day (0.5–5.0)
+
+- <code>BMI</code> - Body Mass Index (18–40)
+
+- <code>Alcohol</code> - Units of alcohol per week (0–20)
+
+- <code>Smoking</code> - Cigarettes per day (0–30)
+
+**Limits:** Dataset is synthetic. Its variable definitions, measurement scales and score metric method require verification. The analysis descibes patterns in the generated data and should not be interpreted as established relationships for real-world populations or used for individual health assessments. 
+
 
 ## Template Instructions
 
