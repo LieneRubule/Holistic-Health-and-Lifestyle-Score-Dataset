@@ -1,0 +1,12 @@
+﻿Variable,Meaning,Units,Valid_Values,Notes,Data_Type,Source
+Physical_Activity,Moderate to vigorous exercise,Minutes per day,0–120,Synthetic numeric measure.,float64,https://www.kaggle.com/datasets/miadul/holistic-health-and-lifestyle-score-dataset
+Nutrition_Score,"Diet quality: nutrient density, balance and variety",Score,0–10,Not a clinically validated assessment.,float64,https://www.kaggle.com/datasets/miadul/holistic-health-and-lifestyle-score-dataset
+Stress_Level,Stress level; higher values indicate greater stress,Score,1–10,"Described as self-reported, but records are synthetic.",float64,https://www.kaggle.com/datasets/miadul/holistic-health-and-lifestyle-score-dataset
+Mindfulness,"Meditation, journaling or mindful activity",Minutes per day,0–60,Zero is permitted by the source.,float64,https://www.kaggle.com/datasets/miadul/holistic-health-and-lifestyle-score-dataset
+Sleep_Hours,Average sleep duration,Hours per night,3–10,Dataset bounds are not clinical recommendations.,float64,https://www.kaggle.com/datasets/miadul/holistic-health-and-lifestyle-score-dataset
+Hydration,Water consumption,Litres per day,0.5–5.0,Dataset bounds are not clinical recommendations.,float64,https://www.kaggle.com/datasets/miadul/holistic-health-and-lifestyle-score-dataset
+BMI,Body Mass Index,kg/m²,18–40,Synthetic measure; not a diagnosis.,float64,https://www.kaggle.com/datasets/miadul/holistic-health-and-lifestyle-score-dataset
+Alcohol,Weekly alcohol consumption,Alcohol units per week,0–20,The source does not define grams of alcohol per unit.,float64,https://www.kaggle.com/datasets/miadul/holistic-health-and-lifestyle-score-dataset
+Smoking,Daily cigarette consumption,Cigarettes per day,0–30,Fractional synthetic values retained without rounding.,float64,https://www.kaggle.com/datasets/miadul/holistic-health-and-lifestyle-score-dataset
+Overall_Health_Score,Weighted formula using the nine input variables,Score,0–100,Clipped to 0–100; not an independent health measurement.,float64,https://www.kaggle.com/datasets/miadul/holistic-health-and-lifestyle-score-dataset
+Health_Status,Category associated with the overall health score,Category,Poor; Average; Good,"Boundaries at 40 and 70 inferred, not source-confirmed.",object,https://www.kaggle.com/datasets/miadul/holistic-health-and-lifestyle-score-dataset
