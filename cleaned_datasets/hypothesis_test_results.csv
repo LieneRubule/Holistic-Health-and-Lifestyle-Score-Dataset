@@ -1,0 +1,7 @@
+Family,Test,Estimate,CI_95_low,CI_95_high,Test_statistic,Degrees_of_freedom,P_value,Holm_adjusted_P_value,Effect_size,Effect_size_name
+Primary (Holm-adjusted across 3),Pearson correlation: Physical_Activity,0.1460136056975395,0.1267763540135346,0.16514106230936834,0.1460136056975395,9998.0,8.8837e-49,8.8837e-49,0.1460136056975395,Pearson r
+Primary (Holm-adjusted across 3),Pearson correlation: Nutrition_Score,0.38567776002266985,0.3688660633456531,0.4022371939419272,0.38567776002266985,9998.0,<1e-300,<1e-300,0.38567776002266985,Pearson r
+Primary (Holm-adjusted across 3),Welch mean difference: smoker minus non-smoker,-8.260838109581002,-9.105646658949546,-7.416029560212457,-19.1716064539164,3635.7326457075037,4.05398e-78,8.10796e-78,-0.42534403643232016,Hedges g
+Sensitivity (unadjusted),Spearman correlation: Physical_Activity,0.1376038034365273,,,,,1.81452e-43,,0.1376038034365273,Spearman rho
+Sensitivity (unadjusted),Spearman correlation: Nutrition_Score,0.3664537416053958,,,,,<1e-300,,0.3664537416053958,Spearman rho
+Sensitivity (unadjusted),Mann-Whitney U: smoker vs non-smoker,6044675.0,,,6044675.0,,2.40603e-64,,,
