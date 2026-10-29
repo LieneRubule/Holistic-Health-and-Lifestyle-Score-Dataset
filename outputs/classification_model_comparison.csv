@@ -1,0 +1,4 @@
+Model,Accuracy,Macro F1-Score
+Baseline (Most Frequent),0.676,0.26889419252187746
+Logistic Regression,0.9965,0.991383226263863
+Random Forest Classifier,0.913,0.7968223166432885
