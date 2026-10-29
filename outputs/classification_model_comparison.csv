@@ -1,4 +1,4 @@
 Model,CV_Accuracy,CV_F1_Macro,CV_F1_Std,Test_Accuracy,Test_F1_Macro
 Baseline,0.6759,0.2689,0.0001,0.676,0.2689
-Logistic Regression,0.992,0.9805,0.0092,0.9965,0.9914
+Logistic Regression,0.992,0.9805,0.0092,0.9955,0.9886
 Random Forest,0.9049,0.7803,0.0079,0.913,0.7968
