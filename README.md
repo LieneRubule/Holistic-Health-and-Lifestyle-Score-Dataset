@@ -44,18 +44,6 @@ The licence permits copying, modification and redistribution. The creator and so
 
 **Limits:** Dataset is synthetic. Its variable definitions, measurement scales and score metric method require verification. The analysis descibes patterns in the generated data and should not be interpreted as established relationships for real-world populations or used for individual health assessments. 
 
-## **<u>Project Plan</u>**
-
-**Data Collection** – A synthetic health and lifestyle dataset is loaded for analysis. Each record represents a simulated individual, with physical and lifestyle indicators alongside an Overall Health Score and categorical Health Status.
-
-**Data Cleaning and Preperation** – Data integrity is assessed before analysis by inspecting the dataset's structure, standardising column names where necessary, checking data types, and validating missing values, duplicate records and numerical ranges. The overall health scores are checked against the supplied scoring formula. The validated dataset is exported for subsequent analysis.
-
-**Exploratory Data Analysis (EDA)** – Relationships between lifestyle indicators and overall health scores are explored using Pandas, NumPy, Matplotlib and Seaborn. 
-
-**Statistical Analysis** – Descriptive statistics and appropriate statistical tests are used to investigate differences and associations between lifestyle indicators and overall health scores.
-
-**Feature Engineering** – The validated dataset is prepared for machine learning by selecting relevant lifestyle variables and defining the target variable. The relationship between the input variables, Overall Health Score and Health Status is examined to identify potential target leakage. Features are selected with consideration of the scoring methodology and the limitations of predicting a formula-derived outcome.
-
 ## **Hypothesis Research Questions**
 
 The following research questions combine correlation analysis, statistical hypothesis testing, and predictive modelling to investigate relationships between lifestyle factors and overall health scores, assess differences between smoking groups, and evaluate the predictive performance of machine learning.
@@ -69,6 +57,26 @@ The following research questions combine correlation analysis, statistical hypot
 4. How accurately can lifestyle factors predict health-status categories, and which factors contribute most to the model's predictions? The hypothesis is that a machine-learning classifier using lifestyle factors can predict the Poor, Average, and Good health-status categories more accurately than a baseline model that always predicts the most common category. Model performance is evaluated using classification metrics and a confusion matrix, while feature importance analysis explores which lifestyle factors contribute most to the model's predictions.
 
 **Ethical and methodological considerations:** The dataset is synthetic and represents a constructed scoring system rather than independently measured real-world health outcomes. Consequently, the findings describe patterns within the dataset and should not be interpreted as evidence of real-world causal relationships or as a validated method for assessing individual health. Overall health scores are excluded from the model's predictor variables because the health-status categories are derived from these scores. This helps avoid target leakage and ensures that the model evaluates the predictive contribution of lifestyle factors rather than directly using the information from which the target categories were created.
+
+## **<u>Project Plan</u>**
+
+**Data Collection** – A synthetic health and lifestyle dataset is loaded for analysis. Each record represents a simulated individual, with physical and lifestyle indicators alongside an Overall Health Score and categorical Health Status.
+
+**Data Cleaning and Preperation** – Data integrity is assessed before analysis by inspecting the dataset's structure, standardising column names where necessary, checking data types, and validating missing values, duplicate records and numerical ranges. The overall health scores are checked against the supplied scoring formula. The validated dataset is exported for subsequent analysis.
+
+**Exploratory Data Analysis (EDA)** – Relationships between lifestyle indicators and overall health scores are explored using Pandas, NumPy, Matplotlib and Seaborn. 
+
+**Statistical Analysis** – Descriptive statistics and appropriate statistical tests are used to investigate differences and associations between lifestyle indicators and overall health scores.
+
+**Feature Engineering** – The validated dataset is prepared for machine learning by selecting relevant lifestyle variables and defining the target variable. The relationship between the input variables, Overall Health Score and Health Status is examined to identify potential target leakage. Features are selected with consideration of the scoring methodology and the limitations of predicting a formula-derived outcome.
+
+## **<u>Analysis Techniques Used</u>**
+
+EDA and HYPOTHESIS TESTING
+
+## **<u>Hypothesis Validation</u>**
+
+For each research question EDA and HYPOTHESIS TESTING
 
 ### 🤖 Machine Learning Model Performance & Summary
 * **Classification Pipeline (`Health_Status`):** Evaluated a baseline against Logistic Regression and Random Forest models using stratified 5-fold cross-validation. **Logistic Regression** emerged as the best-performing classifier, achieving a test accuracy of $96.55\%$ and a Macro F1-score of $0.9043$.
@@ -131,8 +139,19 @@ Evaluate classification model performance in predicting Poor, Average and Good h
 
 ![Holistic Lifestyles and Wellbeing and Dashboard](tableau_dashboard/04-predictive-model.jpeg)
 
+## **<u>Technologies Used</u>**
 
-**Ethical Considerations** - Throughout the workflow, attention is given to the implications of reducing complex wellbeing to numerical scores. The project distinguishes between patterns within synthetic data and evidence derived from real populations, highlighting the limitations of formula-based scores, inferred health-status thresholds and predictive modelling. The findings are intended for educational and exploratory purposes, not clinical assessment or healthcare decision-making.
+## **<u>Project Management</u>**
 
-## How to use this repo
+## **<u>Development Roadmap</u>**
+
+## **<u>AI Usage</u>**
+
+## **<u>Ethical Considerations</u>** 
+
+Throughout the analytical workflow, attention is given to the ethical implications of reducing complex health and wellbeing outcomes to numerical scores. The project distinguishes between patterns identified within a synthetic dataset and evidence derived from real-world populations, acknowledging the limitations of formula-based health scores, predefined health-status thresholds, and predictive modelling. 
+
+Feature importance is interpreted in the context of the dataset's underlying scoring system, rather than as evidence of causal relationships or clinically significant factors. The findings are intended for educational and exploratory purposes only and should not be used for clinical assessment, individual health profiling, or healthcare decision-making.
+
+## **<u>Acknowledgements</u>**
 
