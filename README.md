@@ -44,6 +44,20 @@ The licence permits copying, modification and redistribution. The creator and so
 
 **Limits:** Dataset is synthetic. Its variable definitions, measurement scales and score metric method require verification. The analysis descibes patterns in the generated data and should not be interpreted as established relationships for real-world populations or used for individual health assessments. 
 
+## **Hypothesis Research Questions**
+
+The following research questions combine correlation analysis, statistical hypothesis testing, and predictive modelling to investigate relationships between lifestyle factors and overall health scores, assess differences between smoking groups, and evaluate the predictive performance of machine learning.
+
+1. Is higher physical activity associated with a higher overall health score? The hypothesis is that higher physical activity is positively associated with overall health scores. This is investigated through correlation analysis to examine the direction and strength of the relationship between physical activity and overall health scores.
+
+2. Is a higher nutrition score associated with a higher overall health score? The hypothesis is that higher nutrition scores are positively associated with overall health scores. Correlation analysis is used to investigate whether improvements in nutrition scores correspond to higher overall health scores within the dataset.
+
+3. Do overall health scores differ between smoking and non-smoking groups? The hypothesis is that mean overall health scores differ between records with smoking values greater than zero and those with smoking values equal to zero. A two-sample statistical test, using Welch's t-test where appropriate, is applied to assess whether the observed difference in group means is statistically significant.
+
+4. How accurately can lifestyle factors predict health-status categories, and which factors contribute most to the model's predictions? The hypothesis is that a machine-learning classifier using lifestyle factors can predict the Poor, Average, and Good health-status categories more accurately than a baseline model that always predicts the most common category. Model performance is evaluated using classification metrics and a confusion matrix, while feature importance analysis explores which lifestyle factors contribute most to the model's predictions.
+
+**Ethical and methodological considerations:** The dataset is synthetic and represents a constructed scoring system rather than independently measured real-world health outcomes. Consequently, the findings describe patterns within the dataset and should not be interpreted as evidence of real-world causal relationships or as a validated method for assessing individual health. Overall health scores are excluded from the model's predictor variables because the health-status categories are derived from these scores. This helps avoid target leakage and ensures that the model evaluates the predictive contribution of lifestyle factors rather than directly using the information from which the target categories were created.
+
 ## **<u>Project Plan</u>**
 
 **Data Collection** – A synthetic health and lifestyle dataset is loaded for analysis. Each record represents a simulated individual, with physical and lifestyle indicators alongside an Overall Health Score and categorical Health Status.
@@ -56,7 +70,55 @@ The licence permits copying, modification and redistribution. The creator and so
 
 **Feature Engineering** – The validated dataset is prepared for machine learning by selecting relevant lifestyle variables and defining the target variable. The relationship between the input variables, Overall Health Score and Health Status is examined to identify potential target leakage. Features are selected with consideration of the scoring methodology and the limitations of predicting a formula-derived outcome.
 
+## **<u>Analysis Techniques Used</u>**
 
+**Descriptive Statistics** — Numerical statistics, including means, medians, standard deviations and percentiles, are reviewed to understand the distribution of lifestyle variables and overall health scores. This helps identify potential anomalies, assess data quality and understand the characteristics of the dataset before statistical testing and predictive modelling.
+
+**Correlation Analysis** - Examine the relationships between physical activity, nutrition and overall health scores. Group comparisons are also used to investigate differences in mean overall health scores between smoking and non-smoking records.
+
+**Hypothesis Testing** — Pearson correlation is used to assess the direction and strength of the relationships between physical activity, nutrition and overall health scores. Welch's independent-samples t-test examines whether mean overall health scores differ between smoking and non-smoking groups. Holm adjustment is applied across the three primary tests to account for multiple comparisons, while Spearman correlations and a Mann–Whitney U test provide sensitivity checks. Statistical significance is evaluated using p-values, alongside confidence intervals and effect sizes, to support interpretation of the findings.
+
+**Predictive Modelling** — A machine-learning classifier is used to investigate how effectively lifestyle variables predict the Poor, Average and Good health-status categories. Model performance is evaluated against a baseline classifier using classification metrics and a confusion matrix. Feature importance is examined to identify which variables contribute most to the model's predictions. Overall health scores are excluded from the predictors because the target categories are derived from these scores, reducing the risk of target leakage.
+
+## **<u>Hypothesis Validation</u>**
+
+The hypothesis testing explored whether physical activity and nutrition scores were associated with calculated overall health scores, and whether health scores differed between smoking groups. The analysis revealed statistically significant relationships across all three investigations, although the strength of these relationships varied.
+
+Nutrition demonstrated a stronger positive association with overall health scores than physical activity. The comparison between smoking groups also revealed a substantial difference in mean scores. However, these findings must be interpreted in the context of a synthetic dataset in which overall health scores are calculated from lifestyle factors rather than independently measured health outcomes.
+
+**Is higher physical activity associated with a higher overall health score?**
+
+**Result:** Supported
+
+**Summary:** Pearson correlation analysis identified a weak positive association between physical activity and overall health scores (r = 0.146, 95% CI: 0.127–0.165). This suggests that higher physical activity scores tend to correspond to higher overall health scores, although the relationship is relatively weak.
+
+The findings indicate that physical activity is associated with the calculated health score within the dataset. However, the strength of this relationship should not be interpreted as evidence of its independent contribution to real-world health outcomes, particularly because the score is generated using a formula based on lifestyle factors.
+
+**Is a higher nutrition score associated with a higher overall health score?**
+
+**Result:** Supported
+
+**Summary:** Pearson correlation analysis identified a stronger positive association between nutrition and overall health scores (r = 0.386, 95% CI: 0.369–0.402) than was observed for physical activity.
+
+This suggests that nutrition scores have a closer statistical relationship with the calculated overall health score within the dataset. The difference between the two correlations highlights how individual lifestyle variables may relate differently to a composite measure of wellbeing.
+
+Nevertheless, this association does not establish that nutrition independently causes higher health scores. Because the overall score is formula-based, the relationship may partly reflect how nutrition contributes to its calculation.
+
+**Do overall health scores differ between smoking and non-smoking groups?**
+
+**Result:** Supported
+
+**Summary:** Welch's independent-samples t-test identified a statistically significant difference in mean overall health scores between non-smokers and smokers. Among the 10,000 records, 1,996 were classified as non-smokers (Smoking == 0) and 8,004 as smokers (Smoking > 0).
+
+The mean overall health score was 84.84 for non-smokers and 76.58 for smokers, representing a difference of 8.26 points. The 95% confidence interval for the smoker-minus-non-smoker difference was −9.11 to −7.42, with t(3635.7) = −19.17 and p = 4.05 × 10⁻⁷⁸. Hedges' g = −0.43 indicated a moderate standardised difference between the groups.
+
+These findings support the hypothesis that mean health scores differ between smoking groups within the dataset. However, the difference cannot establish that smoking caused lower scores, as the analysis examines a synthetic scoring system rather than independently measured health outcomes.
+
+**Multiple testing and sensitivity analysis**
+
+Holm adjustment was applied across the three primary statistical tests, and all three remained statistically significant after adjustment. Spearman correlations and a Mann–Whitney U test were also conducted as sensitivity checks, producing patterns consistent with the primary analyses.
+
+These checks provide additional confidence that the observed statistical patterns are not dependent solely on the selected parametric tests. However, statistical robustness within a synthetic dataset does not establish that the relationships generalise to real-world populations.
 
 ### 🤖 Machine Learning Model Performance & Summary
 * **Classification Pipeline (`Health_Status`):** Evaluated a baseline against Logistic Regression and Random Forest models using stratified 5-fold cross-validation. **Logistic Regression** emerged as the best-performing classifier, achieving a test accuracy of $96.55\%$ and a Macro F1-score of $0.9043$.
@@ -64,84 +126,78 @@ The licence permits copying, modification and redistribution. The creator and so
 * **Dashboard Portability & Governance:** In accordance with team governance standards, binary model binaries (`.joblib`) were replaced by clean, portable CSV exports containing feature importances, scaler parameters, and evaluation metrics for dashboard integration.
 * **Limitations & Ethics:** Because the dataset is synthetic, models learn the underlying scoring formula rather than real biological phenomena. Findings must be interpreted strictly as exploratory dashboard insights and do not constitute clinical or medical advice.
 
+## <u>**Dashboard Creation**</u>
 
+The Tableau dashboard was designed to communicate the findings of the exploratory data analysis and machine-learning investigation using a synthetic health and lifestyle dataset. A dedicated cover page introduces the project's research questions, analytical purpose and ethical considerations. Across the dashboards, explanatory text contextualises observed relationships, highlights differences between smoking groups, and communicates the limitations of predictive modelling.
 
+The dashboard explores associations between physical activity, nutrition and overall health scores; examines distributions and trends across lifestyle score ranges; compares average health scores and health-status distributions between smokers and non-smokers; and evaluates the performance of classification models in predicting Poor, Average and Good health-status categories. Feature importance visualisations identify which variables contribute most to the model's predictions.
 
+Together, these visualisations investigate how lifestyle variables relate to the dataset's formula-derived health scores and how effectively those patterns can be classified. Ethical disclosures emphasise that statistical associations do not establish causation, feature importance does not demonstrate causal influence, and model performance within synthetic data cannot be assumed to generalise to real-world populations. The dashboard is intended for educational and portfolio purposes, not medical advice or clinical decision-making.
 
-**Dashboard Creation** – An interactive dashboard presents the main findings through visualisations of lifestyle indicators, overall health score distributions and health-status categories. 
+#### **Dashboard Features**
 
-**Ethical Considerations** - Throughout the workflow, attention is given to the implications of reducing complex wellbeing to numerical scores. The project distinguishes between patterns within synthetic data and evidence derived from real populations, highlighting the limitations of formula-based scores, inferred health-status thresholds and predictive modelling. The findings are intended for educational and exploratory purposes, not clinical assessment or healthcare decision-making.
+- **Lifestyle association analysis:** Scatter plots and trend lines explore relationships between physical activity, nutrition and overall health scores.
 
-## Template Instructions
+- **Trends and distributions:** Line charts and histograms examine average health scores and record distributions across physical activity and nutrition score ranges.
 
-Welcome,
+- **Smoking-group comparison:** KPI cards compare average health scores for smokers and non-smokers, supported by a box plot and a health-status comparison table.
 
-This is the Code Institute student template for the three Data Analytics capstone projects. We have preinstalled all of the tools you need to get started. It's perfectly okay to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
+- **Classification model evaluation:** Bar charts compare model accuracy, while feature importance visualises the relative contribution of lifestyle variables to predictions.
 
-You can safely delete the Template Instructions section of this README.md file and modify the remaining paragraphs for your own project. Please do read the Template Instructions at least once, though! It contains some important information about the IDE and the extensions we use.
+- **KPI cards:** Highlight key numerical summaries, including average health scores for selected groups.
 
-If you are working on the first capstone project, you can also delete `.python-version`, `.slugignore`, `Procfile` and `setup.sh` as they are only required for later dashboard projects. 
+- **Interactive exploration:** Tooltips and dashboard interactions support closer examination of score ranges, health-status categories and observed patterns.
 
-## How to use this repo
+- **Ethical disclosure:** Dedicated explanatory text addresses synthetic data limitations, predictive reliability, potential bias, interpretation and responsible use.
 
-1. Use this template to create your GitHub project repo. Click the **Use this template** button, then click **Create a new repository**.
+- **User-centred design:** A consistent turquoise, orange and charcoal palette, clear typography, concise annotations and structured layouts support readability and visual comparison.
 
-1. Copy the URL of your repository to your clipboard.
+**Live Dashboard Link:** https://public.tableau.com/views/HolisticHealthLifestyleAnalysis/00-Coverpage
 
-1. In VS Code, select **File** -> **Open Folder**.
+**Dashboard Pages**
 
-1. Select your `vscode-projects` folder, then click the **Select Folder** button on Windows, or the **Open** button on Mac.
+**Cover Page — Measuring Holistic Health and Wellbeing**
+Introduces the project's research questions, analytical purpose and ethical disclaimer, highlighting the use of synthetic data and the limitations of interpreting health-related patterns.
 
-1. From the top menu in VS Code, select **Terminal** > **New Terminal** to open a new terminal.
+![Holistic Lifestyles and Wellbeing and Dashboard](tableau_dashboard/00-cover-page.jpeg)
 
-1. In the terminal, type `git clone` followed by the URL of your GitHub repository. Then hit **Enter**. This command will download all the files in your GitHub repository into your vscode-projects folder.
+**Page 1 — Let's Get Physical & Food for Thought**
+Explore the relationships between physical activity, nutrition and overall health scores using scatter plots and trend lines. Examine how these lifestyle variables are associated with the dataset's formula-derived health scores, without assuming causal relationships.
 
-1. In VS Code, select **File** > **Open Folder** again.
+![Holistic Lifestyles and Wellbeing and Dashboard](tableau_dashboard/01-correlation-analysis.jpeg)
 
-1. This time, navigate to and select the folder for the project you just downloaded. Then, click **Select Folder**.
+**Page 2 — Trending Towards Wellbeing**
+Examine average health scores and record distributions across physical activity and nutrition score ranges. KPI cards highlight average scores, while line charts and histograms reveal patterns within the synthetic dataset.
 
-1. A virtual environment is necessary when working with Python projects to ensure each project's dependencies are kept separate. You need to create your virtual environment, also called a venv, and then activate it whenever you return to your workspace.
-Click the gear icon in the lower left-hand corner of the screen to open the Manage menu and select **Command Palette** to open the VS Code command palette.
+![Holistic Lifestyles and Wellbeing and Dashboard](tableau_dashboard/02-trends.jpeg)
 
-1. In the command palette, type: *create environment* and select **Python: Create Environment…**
+**Page 3 — The Burning Question: Smoking and Health**
+Compare average health scores between smokers and non-smokers using KPI cards, a box plot and a health-status comparison table. Explore differences in score distributions and the representation of Poor, Average and Good health-status categories.
 
-1. Choose **Venv** from the dropdown list.
+![Holistic Lifestyles and Wellbeing and Dashboard](tableau_dashboard/03-smoking.jpeg)
 
-1. Choose the Python version you installed earlier. Currently, we recommend Python 3.12.8
+**Page 4 — A Healthy Guess?**
+Evaluate classification model performance in predicting Poor, Average and Good health-status categories. Compare model accuracy and examine feature importance to identify which lifestyle variables contribute most to predictions, while acknowledging the limitations of synthetic data and the risks of overinterpreting model results.
 
-1. **DO NOT** click the box next to `requirements.txt`; you need to complete additional steps before installing your dependencies. Click **OK**.
+![Holistic Lifestyles and Wellbeing and Dashboard](tableau_dashboard/04-predictive-model.jpeg)
 
-1. You will see a `.venv` folder appear in the file explorer pane, indicating that the virtual environment has been created.
+## **<u>Technologies Used</u>**
 
-1. **Important**: Note that the `.venv` folder is in the `.gitignore` file so that Git won't track it.
+## **<u>Project Management</u>**
 
-1. Return to the terminal by clicking on the TERMINAL tab, or click on the **Terminal** menu and choose **New Terminal** if no terminal is currently open.
+## **<u>Development Roadmap</u>**
 
-1. In the terminal, use the command below to install your dependencies. This may take several minutes.
+## **<u>AI Usage</u>**
 
- ```console
- pip3 install -r requirements.txt
- ```
+## **<u>Ethical Considerations</u>** 
 
-1. Open the `jupyter_notebooks` directory, and click on the notebook you want to open.
+The analysis demonstrates how statistical methods can identify relationships and differences within structured data, but it also highlights the limitations of interpreting numerical health scores without understanding how they were constructed.
 
-1. Click the **Kernel** button, then choose **Python Environments**.
+The overall health score is calculated from lifestyle factors and capped at 100. Consequently, the observed correlations may partly reflect the mathematical relationships embedded in the scoring formula rather than independent relationships between lifestyle and health. Similarly, statistically significant differences between smoking groups should not be interpreted as evidence of causation or as a clinical assessment of individual health.
 
-Note that the kernel says `Python 3.12.8` as it inherits from the venv, so it will be Python-3.12.8 if that is what is installed on your PC. To confirm this, you can use the command below in a notebook code cell.
+The dataset's synthetic nature is central to interpreting the findings. Although the results support all three hypotheses within this dataset, they do not establish clinical validity or demonstrate that the same patterns would occur in real populations.
 
-```console
-! python --version
-```
+Ultimately, the project highlights the distinction between identifying statistical patterns and establishing meaningful evidence about human wellbeing. Numerical scores can make complex information easier to analyse, but their interpretation depends on the assumptions, definitions and calculations underlying them. The findings are therefore intended for educational and exploratory purposes, not clinical assessment or healthcare decision-making.
 
-## Deployment Reminders
+## **<u>Acknowledgements</u>**
 
-* The `.python-version`, `.slugignore`, `Procfile` and `setup.sh` files are necessary only if you are deploying a Streamlit app to Heroku as part of your submission for units 2 and 3. 
-* Set the `.python-version` Python version to a [Heroku-22](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack, currently supported version that most closely matches what you used in this project.
-* The project can be deployed to Heroku using the following steps.
-
-1. Log in to Heroku and create an App
-2. At the **Deploy** tab, select **GitHub** as the deployment method.
-3. Select your repository name and click **Search**. Once it is found, click **Connect**.
-4. Select the branch you want to deploy, then click **Deploy Branch**.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button **Open App** at the top of the page to access your App.
-6. If the slug size is too large, then add large files not required for the app to the `.slugignore` file.
