@@ -410,7 +410,8 @@ dataset was available; documentation and review supported multiple stages.
 | **4. Test the hypotheses** | Assess activity and nutrition associations and compare smoking groups | Nadjat | Statistical results, sensitivity checks and evidence-based conclusions |
 | **5. Evaluate predictive models** | Compare baseline, classification and regression models | Hema | Model comparisons, evaluation metrics, feature importances and exported results |
 | **6. Communicate findings** | Build the Tableau dashboard and organise the README | Viktoria; Liene for final README completion | Accessible visual explanations and documentation linked to the analysis |
-| **7. Review and present** | Check consistency, review the repository and prepare the presentation | Entire team | A coordinated final explanation of the methods, findings and limitations |
+| **7. Prepare communication materials** | Develop presentation assets and organise project delivery materials | Viktoria | Project presentation, supporting visuals, speaking materials and final dashboard presentation assets |
+| **8. Review and present** | Check consistency, review the repository and prepare the final presentation | Entire team | A coordinated final explanation of the methods, findings and limitations |
 
 ### Team AI Use Statement
 
