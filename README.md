@@ -72,11 +72,53 @@ The following research questions combine correlation analysis, statistical hypot
 
 ## **<u>Analysis Techniques Used</u>**
 
-EDA and HYPOTHESIS TESTING
+**Descriptive Statistics** — Numerical statistics, including means, medians, standard deviations and percentiles, are reviewed to understand the distribution of lifestyle variables and overall health scores. This helps identify potential anomalies, assess data quality and understand the characteristics of the dataset before statistical testing and predictive modelling.
+
+**Correlation Analysis** - Examine the relationships between physical activity, nutrition and overall health scores. Group comparisons are also used to investigate differences in mean overall health scores between smoking and non-smoking records.
+
+**Hypothesis Testing** — Pearson correlation is used to assess the direction and strength of the relationships between physical activity, nutrition and overall health scores. Welch's independent-samples t-test examines whether mean overall health scores differ between smoking and non-smoking groups. Holm adjustment is applied across the three primary tests to account for multiple comparisons, while Spearman correlations and a Mann–Whitney U test provide sensitivity checks. Statistical significance is evaluated using p-values, alongside confidence intervals and effect sizes, to support interpretation of the findings.
+
+**Predictive Modelling** — A machine-learning classifier is used to investigate how effectively lifestyle variables predict the Poor, Average and Good health-status categories. Model performance is evaluated against a baseline classifier using classification metrics and a confusion matrix. Feature importance is examined to identify which variables contribute most to the model's predictions. Overall health scores are excluded from the predictors because the target categories are derived from these scores, reducing the risk of target leakage.
 
 ## **<u>Hypothesis Validation</u>**
 
-For each research question EDA and HYPOTHESIS TESTING
+The hypothesis testing explored whether physical activity and nutrition scores were associated with calculated overall health scores, and whether health scores differed between smoking groups. The analysis revealed statistically significant relationships across all three investigations, although the strength of these relationships varied.
+
+Nutrition demonstrated a stronger positive association with overall health scores than physical activity. The comparison between smoking groups also revealed a substantial difference in mean scores. However, these findings must be interpreted in the context of a synthetic dataset in which overall health scores are calculated from lifestyle factors rather than independently measured health outcomes.
+
+**Is higher physical activity associated with a higher overall health score?**
+
+**Result:** Supported
+
+**Summary:** Pearson correlation analysis identified a weak positive association between physical activity and overall health scores (r = 0.146, 95% CI: 0.127–0.165). This suggests that higher physical activity scores tend to correspond to higher overall health scores, although the relationship is relatively weak.
+
+The findings indicate that physical activity is associated with the calculated health score within the dataset. However, the strength of this relationship should not be interpreted as evidence of its independent contribution to real-world health outcomes, particularly because the score is generated using a formula based on lifestyle factors.
+
+**Is a higher nutrition score associated with a higher overall health score?**
+
+**Result:** Supported
+
+**Summary:** Pearson correlation analysis identified a stronger positive association between nutrition and overall health scores (r = 0.386, 95% CI: 0.369–0.402) than was observed for physical activity.
+
+This suggests that nutrition scores have a closer statistical relationship with the calculated overall health score within the dataset. The difference between the two correlations highlights how individual lifestyle variables may relate differently to a composite measure of wellbeing.
+
+Nevertheless, this association does not establish that nutrition independently causes higher health scores. Because the overall score is formula-based, the relationship may partly reflect how nutrition contributes to its calculation.
+
+**Do overall health scores differ between smoking and non-smoking groups?**
+
+**Result:** Supported
+
+**Summary:** Welch's independent-samples t-test identified a statistically significant difference in mean overall health scores between non-smokers and smokers. Among the 10,000 records, 1,996 were classified as non-smokers (Smoking == 0) and 8,004 as smokers (Smoking > 0).
+
+The mean overall health score was 84.84 for non-smokers and 76.58 for smokers, representing a difference of 8.26 points. The 95% confidence interval for the smoker-minus-non-smoker difference was −9.11 to −7.42, with t(3635.7) = −19.17 and p = 4.05 × 10⁻⁷⁸. Hedges' g = −0.43 indicated a moderate standardised difference between the groups.
+
+These findings support the hypothesis that mean health scores differ between smoking groups within the dataset. However, the difference cannot establish that smoking caused lower scores, as the analysis examines a synthetic scoring system rather than independently measured health outcomes.
+
+**Multiple testing and sensitivity analysis**
+
+Holm adjustment was applied across the three primary statistical tests, and all three remained statistically significant after adjustment. Spearman correlations and a Mann–Whitney U test were also conducted as sensitivity checks, producing patterns consistent with the primary analyses.
+
+These checks provide additional confidence that the observed statistical patterns are not dependent solely on the selected parametric tests. However, statistical robustness within a synthetic dataset does not establish that the relationships generalise to real-world populations.
 
 ### 🤖 Machine Learning Model Performance & Summary
 * **Classification Pipeline (`Health_Status`):** Evaluated a baseline against Logistic Regression and Random Forest models using stratified 5-fold cross-validation. **Logistic Regression** emerged as the best-performing classifier, achieving a test accuracy of $96.55\%$ and a Macro F1-score of $0.9043$.
@@ -149,9 +191,13 @@ Evaluate classification model performance in predicting Poor, Average and Good h
 
 ## **<u>Ethical Considerations</u>** 
 
-Throughout the analytical workflow, attention is given to the ethical implications of reducing complex health and wellbeing outcomes to numerical scores. The project distinguishes between patterns identified within a synthetic dataset and evidence derived from real-world populations, acknowledging the limitations of formula-based health scores, predefined health-status thresholds, and predictive modelling. 
+The analysis demonstrates how statistical methods can identify relationships and differences within structured data, but it also highlights the limitations of interpreting numerical health scores without understanding how they were constructed.
 
-Feature importance is interpreted in the context of the dataset's underlying scoring system, rather than as evidence of causal relationships or clinically significant factors. The findings are intended for educational and exploratory purposes only and should not be used for clinical assessment, individual health profiling, or healthcare decision-making.
+The overall health score is calculated from lifestyle factors and capped at 100. Consequently, the observed correlations may partly reflect the mathematical relationships embedded in the scoring formula rather than independent relationships between lifestyle and health. Similarly, statistically significant differences between smoking groups should not be interpreted as evidence of causation or as a clinical assessment of individual health.
+
+The dataset's synthetic nature is central to interpreting the findings. Although the results support all three hypotheses within this dataset, they do not establish clinical validity or demonstrate that the same patterns would occur in real populations.
+
+Ultimately, the project highlights the distinction between identifying statistical patterns and establishing meaningful evidence about human wellbeing. Numerical scores can make complex information easier to analyse, but their interpretation depends on the assumptions, definitions and calculations underlying them. The findings are therefore intended for educational and exploratory purposes, not clinical assessment or healthcare decision-making.
 
 ## **<u>Acknowledgements</u>**
 
