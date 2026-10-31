@@ -136,21 +136,7 @@ Together, these visualisations investigate how lifestyle variables relate to the
 
 #### **Dashboard Features**
 
-- **Lifestyle association analysis:** Scatter plots and trend lines explore relationships between physical activity, nutrition and overall health scores.
-
-- **Trends and distributions:** Line charts and histograms examine average health scores and record distributions across physical activity and nutrition score ranges.
-
-- **Smoking-group comparison:** KPI cards compare average health scores for smokers and non-smokers, supported by a box plot and a health-status comparison table.
-
-- **Classification model evaluation:** Bar charts compare model accuracy, while feature importance visualises the relative contribution of lifestyle variables to predictions.
-
-- **KPI cards:** Highlight key numerical summaries, including average health scores for selected groups.
-
-- **Interactive exploration:** Tooltips and dashboard interactions support closer examination of score ranges, health-status categories and observed patterns.
-
-- **Ethical disclosure:** Dedicated explanatory text addresses synthetic data limitations, predictive reliability, potential bias, interpretation and responsible use.
-
-- **User-centred design:** A consistent turquoise, orange and charcoal palette, clear typography, concise annotations and structured layouts support readability and visual comparison.
+### Dashboard Features
 
 **Live Dashboard Link:** https://public.tableau.com/views/HolisticHealthLifestyleAnalysis/00-Coverpage
 
@@ -198,6 +184,8 @@ The overall health score is calculated from lifestyle factors and capped at 100.
 The dataset's synthetic nature is central to interpreting the findings. Although the results support all three hypotheses within this dataset, they do not establish clinical validity or demonstrate that the same patterns would occur in real populations.
 
 Ultimately, the project highlights the distinction between identifying statistical patterns and establishing meaningful evidence about human wellbeing. Numerical scores can make complex information easier to analyse, but their interpretation depends on the assumptions, definitions and calculations underlying them. The findings are therefore intended for educational and exploratory purposes, not clinical assessment or healthcare decision-making.
+
+## **<u>Credits</u>**
 
 ## **<u>Acknowledgements</u>**
 

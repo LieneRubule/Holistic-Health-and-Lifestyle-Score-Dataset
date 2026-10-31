@@ -1,6 +1,6 @@
 Metric,Value
 Best_Model,Random Forest
-R_Squared,0.9229
-RMSE,5.4671
-MAE,3.961
+R_Squared,0.9228
+RMSE,5.4688
+MAE,3.9623
 Total_Test_Records,2000
