@@ -1,9 +1,22 @@
+![Holistic Health and Lifestyle](visuals/overall_health.png)
+
 # <u>Measuring Holistic Lifestyles and Wellbeing</u>
-## Synthetic Data-Driven Insights for Human-Centred Research 
 
-*Measuring Holistic Lifestyles and Wellbeing* is a collaborative team analysis to address hypothetical research questions concerning holistic lifestyle and wellbeing factors. 
+> **To what extent are daily lifestyle habits—including physical activity, nutrition, sleep, mindfulness and smoking—associated with overall health scores, and how accurately can these factors predict health-status categories within a synthetic dataset?**
 
-The project uses an end-to-end analytical approach by combining exploratory data analysis, statistical methods and machine learning to investigate relationships between lifestyle indicators and synthetic health scores, while examining the potential benefits, limitations and ethical implications of using data-driven insights to inform healthcare decisions.
+
+## Synthetic Data-Driven Insights for Human-Centred Research
+
+*Measuring Holistic Lifestyles and Wellbeing* is a collaborative team
+analysis addressing hypothetical research questions concerning holistic
+lifestyle and wellbeing factors.
+
+The project uses an end-to-end analytical approach, combining exploratory
+data analysis, statistical methods and machine learning to investigate
+relationships between lifestyle indicators and synthetic health scores.
+It also examines the benefits, limitations and ethical implications of
+interpreting health-related data.
+
 
 ## **<u>Stakeholder Summary</u>**
 
@@ -12,6 +25,31 @@ The analysis demonstrates how data analytics can identify patterns and evaluate 
 For stakeholders, *Measuring Holistic Lifestyles and Wellbeing*  illustrates the importance of transparent scoring methods, appropriate model evaluation and human oversight when interpreting health-related data. 
 
 Although this project uses synthetic data to explore relationships between lifestyle factors and overall health scores, applying a similar approach to verified real-world data could help public health researchers identify health trends, healthcare providers understand behavioural risk factors, and wellbeing organisations develop targeted prevention programmes to address lifestyle-related health patterns.
+
+---
+
+### Planning and Coordination
+
+[View the repository](https://github.com/LieneRubule/Holistic-Health-and-Lifestyle-Score-Dataset)
+
+GitHub provided a shared location for the project files, task planning
+and integration of contributions.
+
+## Project Board
+
+Project tasks, issue tracking, and team progress were managed through the GitHub Project Board
+[View the Project Board](https://github.com/users/LieneRubule/projects/5/views/1)
+
+
+- **Issues** divided the project into identifiable tasks.
+- **The project board** organised priorities and made responsibilities
+  visible to the team.
+- **Must, Should, Could and Won’t priorities** helped distinguish
+  essential work from optional additions.
+- **Milestones** grouped related tasks around project deliverables.
+- **Branches and pull requests** supported the integration of work
+  produced by different team members.
+- **Commits** recorded changes and provided a history of development.
 
 ## **<u>Dataset</u>**
 
@@ -42,91 +80,206 @@ The licence permits copying, modification and redistribution. The creator and so
 
 - <code>Smoking</code> - Cigarettes per day (0–30)
 
-**Limits:** Dataset is synthetic. Its variable definitions, measurement scales and score metric method require verification. The analysis descibes patterns in the generated data and should not be interpreted as established relationships for real-world populations or used for individual health assessments. 
+**Limits:** The analysis describes patterns in the generated data and should not be interpreted as established relationships for real-world populations or used for individual health assessments.
 
-## **Hypothesis Research Questions**
+---
 
-The following research questions combine correlation analysis, statistical hypothesis testing, and predictive modelling to investigate relationships between lifestyle factors and overall health scores, assess differences between smoking groups, and evaluate the predictive performance of machine learning.
+## Methodology
 
-1. Is higher physical activity associated with a higher overall health score? The hypothesis is that higher physical activity is positively associated with overall health scores. This is investigated through correlation analysis to examine the direction and strength of the relationship between physical activity and overall health scores.
+### Data Collection
 
-2. Is a higher nutrition score associated with a higher overall health score? The hypothesis is that higher nutrition scores are positively associated with overall health scores. Correlation analysis is used to investigate whether improvements in nutrition scores correspond to higher overall health scores within the dataset.
+A synthetic health and lifestyle dataset was used for this project. Each record represents a simulated individual and includes lifestyle, behavioural and physical health indicators alongside an overall health score and health-status classification.
 
-3. Do overall health scores differ between smoking and non-smoking groups? The hypothesis is that mean overall health scores differ between records with smoking values greater than zero and those with smoking values equal to zero. A two-sample statistical test, using Welch's t-test where appropriate, is applied to assess whether the observed difference in group means is statistically significant.
+### Data Cleaning and Preparation
 
-4. How accurately can lifestyle factors predict health-status categories, and which factors contribute most to the model's predictions? The hypothesis is that a machine-learning classifier using lifestyle factors can predict the Poor, Average, and Good health-status categories more accurately than a baseline model that always predicts the most common category. Model performance is evaluated using classification metrics and a confusion matrix, while feature importance analysis explores which lifestyle factors contribute most to the model's predictions.
+The dataset was inspected to assess its structure, data types, completeness and consistency. Missing values, duplicate records and numerical ranges were checked, and column names were standardised where necessary. The overall health score was validated against the supplied scoring methodology before the cleaned dataset was exported for further analysis.
 
-**Ethical and methodological considerations:** The dataset is synthetic and represents a constructed scoring system rather than independently measured real-world health outcomes. Consequently, the findings describe patterns within the dataset and should not be interpreted as evidence of real-world causal relationships or as a validated method for assessing individual health. Overall health scores are excluded from the model's predictor variables because the health-status categories are derived from these scores. This helps avoid target leakage and ensures that the model evaluates the predictive contribution of lifestyle factors rather than directly using the information from which the target categories were created.
+### Exploratory Data Analysis
 
-## **<u>Project Plan</u>**
+Exploratory Data Analysis (EDA) was conducted using Python libraries including pandas, NumPy, Matplotlib and Seaborn. Variable distributions, relationships between lifestyle factors and health outcomes, and differences between health-status groups were examined using summary statistics and visualisations.
 
-**Data Collection** – A synthetic health and lifestyle dataset is loaded for analysis. Each record represents a simulated individual, with physical and lifestyle indicators alongside an Overall Health Score and categorical Health Status.
+### Statistical Analysis
 
-**Data Cleaning and Preperation** – Data integrity is assessed before analysis by inspecting the dataset's structure, standardising column names where necessary, checking data types, and validating missing values, duplicate records and numerical ranges. The overall health scores are checked against the supplied scoring formula. The validated dataset is exported for subsequent analysis.
+Statistical analysis was performed to investigate relationships between lifestyle indicators and overall health scores. The analysis included descriptive statistics, correlation analysis, group comparisons and hypothesis testing to assess the strength and significance of observed patterns.
 
-**Exploratory Data Analysis (EDA)** – Relationships between lifestyle indicators and overall health scores are explored using Pandas, NumPy, Matplotlib and Seaborn. 
+### Feature Preparation and Machine Learning
 
-**Statistical Analysis** – Descriptive statistics and appropriate statistical tests are used to investigate differences and associations between lifestyle indicators and overall health scores.
+The validated dataset was prepared for predictive modelling by selecting relevant lifestyle variables and defining classification and regression targets. Potential target leakage was assessed, and feature selection was informed by the dataset's scoring methodology and the limitations of predicting formula-derived outcomes.
 
-**Feature Engineering** – The validated dataset is prepared for machine learning by selecting relevant lifestyle variables and defining the target variable. The relationship between the input variables, Overall Health Score and Health Status is examined to identify potential target leakage. Features are selected with consideration of the scoring methodology and the limitations of predicting a formula-derived outcome.
+### Dashboard Development
 
-## **<u>Analysis Techniques Used</u>**
+An interactive Tableau dashboard was developed to present the research questions, visualisations, statistical findings and predictive modelling results. The dashboard also includes discussion of methodological considerations, limitations and ethical implications associated with the analysis.
 
-**Descriptive Statistics** — Numerical statistics, including means, medians, standard deviations and percentiles, are reviewed to understand the distribution of lifestyle variables and overall health scores. This helps identify potential anomalies, assess data quality and understand the characteristics of the dataset before statistical testing and predictive modelling.
+## Analysis Techniques Used
 
-**Correlation Analysis** - Examine the relationships between physical activity, nutrition and overall health scores. Group comparisons are also used to investigate differences in mean overall health scores between smoking and non-smoking records.
+| Technique | Application |
+| --- | --- |
+| Descriptive Statistics | Summarised the dataset through measures such as means, medians, standard deviations and percentiles. |
+| Correlation Analysis | Examined relationships between lifestyle variables and overall health score using Pearson correlations. |
+| Group Comparisons | Compared score distributions and average scores between smoking and non-smoking groups. |
+| Hypothesis Testing | Used Welch's t-test to assess differences between smoking-group means. |
+| Multiple-Testing Adjustment | Applied Holm correction across the primary statistical tests. |
+| Sensitivity Analysis | Used Spearman correlations and Mann-Whitney U tests to assess the robustness of findings. |
+| Classification Modelling | Predicted Poor, Average and Good health-status categories using machine learning models. |
+| Regression Modelling | Predicted numerical overall health scores using regression techniques. |
+| Model Interpretation | Examined feature importance to understand model behaviour and the influence of lifestyle factors. |
 
-**Hypothesis Testing** — Pearson correlation is used to assess the direction and strength of the relationships between physical activity, nutrition and overall health scores. Welch's independent-samples t-test examines whether mean overall health scores differ between smoking and non-smoking groups. Holm adjustment is applied across the three primary tests to account for multiple comparisons, while Spearman correlations and a Mann–Whitney U test provide sensitivity checks. Statistical significance is evaluated using p-values, alongside confidence intervals and effect sizes, to support interpretation of the findings.
+Statistical findings were interpreted alongside confidence intervals, effect sizes and the synthetic nature of the dataset. Statistical significance was not considered evidence of causation or practical importance in isolation.
 
-**Predictive Modelling** — A machine-learning classifier is used to investigate how effectively lifestyle variables predict the Poor, Average and Good health-status categories. Model performance is evaluated against a baseline classifier using classification metrics and a confusion matrix. Feature importance is examined to identify which variables contribute most to the model's predictions. Overall health scores are excluded from the predictors because the target categories are derived from these scores, reducing the risk of target leakage.
+## Data Cleaning and Validation
 
-## **<u>Hypothesis Validation</u>**
+Liene inspected and validated the dataset before sharing it with
+the team for analysis.
 
-The hypothesis testing explored whether physical activity and nutrition scores were associated with calculated overall health scores, and whether health scores differed between smoking groups. The analysis revealed statistically significant relationships across all three investigations, although the strength of these relationships varied.
+| Check | Result |
+|---|---|
+| Dataset structure | 10,000 records and 11 columns. |
+| Missing values and duplicates | None found. |
+| Numerical ranges | All values within the checked ranges. |
+| Health-status categories | All matched the expected score boundaries. |
+| Health-score calculation | All 10,000 scores matched the predefined formula within numerical tolerance. |
+| Export and reload | Confirmed the exported data remained consistent. |
 
-Nutrition demonstrated a stronger positive association with overall health scores than physical activity. The comparison between smoking groups also revealed a substantial difference in mean scores. However, these findings must be interpreted in the context of a synthetic dataset in which overall health scores are calculated from lifestyle factors rather than independently measured health outcomes.
+No rows were removed or missing values filled. A data dictionary
+was created to document all 11 variables.
 
-**Is higher physical activity associated with a higher overall health score?**
+**Outputs:**
+- [Data dictionary](outputs/data_dictionary/health_data_dictionary.csv)
+- [Validated dataset](cleaned_datasets/holistic_health_lifestyle_cleaned.csv)
 
-**Result:** Supported
+The validated dataset provided a shared foundation for EDA,
+hypothesis testing, machine learning and the dashboard.
 
-**Summary:** Pearson correlation analysis identified a weak positive association between physical activity and overall health scores (r = 0.146, 95% CI: 0.127–0.165). This suggests that higher physical activity scores tend to correspond to higher overall health scores, although the relationship is relatively weak.
+## Exploratory Data Analysis (EDA)
 
-The findings indicate that physical activity is associated with the calculated health score within the dataset. However, the strength of this relationship should not be interpreted as evidence of its independent contribution to real-world health outcomes, particularly because the score is generated using a formula based on lifestyle factors.
+The EDA examined the structure of the dataset, the distribution of variables, and the relationships between lifestyle factors, Overall Health Score, and Health Status. This analysis provided the foundation for the statistical testing and predictive modelling stages.
 
-**Is a higher nutrition score associated with a higher overall health score?**
+### Dataset Overview
 
-**Result:** Supported
+- 10,000 synthetic health records
+- 11 variables, including lifestyle indicators, Overall Health Score, and Health Status
+- No missing values identified
+- Analysis completed using Python, pandas, Matplotlib, Seaborn, and Jupyter Notebook
+- Overall Health Score is derived from a predefined scoring formula
 
-**Summary:** Pearson correlation analysis identified a stronger positive association between nutrition and overall health scores (r = 0.386, 95% CI: 0.369–0.402) than was observed for physical activity.
+### EDA Activities
 
-This suggests that nutrition scores have a closer statistical relationship with the calculated overall health score within the dataset. The difference between the two correlations highlights how individual lifestyle variables may relate differently to a composite measure of wellbeing.
+The analysis included:
 
-Nevertheless, this association does not establish that nutrition independently causes higher health scores. Because the overall score is formula-based, the relationship may partly reflect how nutrition contributes to its calculation.
+- Inspecting dataset dimensions, data types, and missing values
+- Generating descriptive statistics for numerical variables
+- Exploring correlations between variables
+- Examining score distributions and Health Status categories
+- Comparing lifestyle factors across health groups
+- Creating visualisations to support interpretation of findings
 
-**Do overall health scores differ between smoking and non-smoking groups?**
+### Key Findings
 
-**Result:** Supported
+- The dataset is heavily weighted towards the **Good** Health Status category, creating class imbalance that should be considered when evaluating classification models.
+- **Mindfulness** showed the strongest positive relationship with Overall Health Score.
+- **Nutrition Score** demonstrated a moderate positive relationship with Overall Health Score.
+- **Smoking** showed a negative relationship with Overall Health Score.
+- Individuals in the **Good** Health Status group generally reported:
+  - Higher physical activity levels
+  - More mindfulness activity
+  - Longer sleep duration
+  - Lower smoking rate
 
-**Summary:** Welch's independent-samples t-test identified a statistically significant difference in mean overall health scores between non-smokers and smokers. Among the 10,000 records, 1,996 were classified as non-smokers (Smoking == 0) and 8,004 as smokers (Smoking > 0).
+### Limitations
 
-The mean overall health score was 84.84 for non-smokers and 76.58 for smokers, representing a difference of 8.26 points. The 95% confidence interval for the smoker-minus-non-smoker difference was −9.11 to −7.42, with t(3635.7) = −19.17 and p = 4.05 × 10⁻⁷⁸. Hedges' g = −0.43 indicated a moderate standardised difference between the groups.
+The Overall Health Score is calculated using the lifestyle variables contained within the dataset. As a result, observed relationships partly reflect the design of the scoring system rather than independent real-world associations. Findings should therefore be interpreted within the context of this synthetic dataset and not generalised to real populations.
 
-These findings support the hypothesis that mean health scores differ between smoking groups within the dataset. However, the difference cannot establish that smoking caused lower scores, as the analysis examines a synthetic scoring system rather than independently measured health outcomes.
+---
 
-**Multiple testing and sensitivity analysis**
+## Research Questions and Hypothesis Validation
 
-Holm adjustment was applied across the three primary statistical tests, and all three remained statistically significant after adjustment. Spearman correlations and a Mann–Whitney U test were also conducted as sensitivity checks, producing patterns consistent with the primary analyses.
+Four research questions were investigated using statistical analysis and machine learning. All conclusions apply only to this synthetic dataset.
 
-These checks provide additional confidence that the observed statistical patterns are not dependent solely on the selected parametric tests. However, statistical robustness within a synthetic dataset does not establish that the relationships generalise to real-world populations.
+### H1: Physical Activity and Overall Health Score
 
-### 🤖 Machine Learning Model Performance & Summary
-* **Classification Pipeline (`Health_Status`):** Evaluated a baseline against Logistic Regression and Random Forest models using stratified 5-fold cross-validation. **Logistic Regression** emerged as the best-performing classifier, achieving a test accuracy of $96.55\%$ and a Macro F1-score of $0.9043$.
-* **Regression Pipeline (`Overall_Health_Score`):** Evaluated models predicting the numerical health score. Both **Linear Regression** and **Random Forest Regressor** demonstrated strong predictive performance (Test $R^2 \approx 0.94$, RMSE $\approx 5.44$), with **Mindfulness**, **Smoking**, and **Nutrition_Score** identified as the primary feature drivers.
-* **Dashboard Portability & Governance:** In accordance with team governance standards, binary model binaries (`.joblib`) were replaced by clean, portable CSV exports containing feature importances, scaler parameters, and evaluation metrics for dashboard integration.
-* **Limitations & Ethics:** Because the dataset is synthetic, models learn the underlying scoring formula rather than real biological phenomena. Findings must be interpreted strictly as exploratory dashboard insights and do not constitute clinical or medical advice.
+**Question:** Is higher physical activity associated with a higher Overall Health Score?
 
-## <u>**Dashboard Creation**</u>
+**Result:** Supported. Physical activity showed a statistically significant positive relationship with Overall Health Score, although the association was relatively weak.
+
+### H2: Nutrition and Overall Health Score
+
+**Question:** Is a higher Nutrition Score associated with a higher Overall Health Score?
+
+**Result:** Supported. Nutrition Score showed a moderate positive relationship with Overall Health Score and a stronger association than physical activity.
+
+### H3: Smoking and Overall Health Score
+
+**Question:** Do health scores differ between smoking and non-smoking groups?
+
+**Result:** Supported. Non-smokers had significantly higher Overall Health Scores than smokers within this dataset.
+
+**Visualisation:**  
+[Smoking vs Health Score](visuals/q3_smoking_vs_health_boxplot.png)
+
+### H4: Predicting Health Status
+
+**Question:** Can lifestyle factors accurately predict Health Status?
+
+**Result:** Supported. Logistic Regression achieved 99.55% accuracy and a macro F1 score of 0.9886, substantially outperforming the majority-class baseline.
+
+**Visualisation:**  
+[Classification Confusion Matrix](visuals/classification_confusion_matrix.png)
+
+### Key Predictors
+
+Feature importance analysis identified **Mindfulness**, **Nutrition Score**, and **Smoking** as the most influential variables in predicting health outcomes.
+
+**Visualisation:**  
+[Correlation Heatmap](visuals/02_correlation_heatmap.png)
+
+### Summary
+
+All statistical tests remained significant after Holm adjustment, and sensitivity analyses produced consistent results. Because the Overall Health Score is derived from the input variables, findings should be interpreted within the context of this synthetic dataset and not generalised to real-world populations.
+
+**Additional Results:**  
+[Hypothesis Test Results](cleaned_datasets/hypothesis_test_results.csv)
+
+---
+
+## Machine Learning
+
+Two machine learning tasks were explored:
+
+- **Classification** – Predicting Health Status (Poor, Average, Good).
+- **Regression** – Predicting Overall Health Score.
+
+Nine lifestyle variables were used as input features, while `Overall_Health_Score` and `Health_Status` were excluded to reduce target leakage.
+
+### Classification
+
+Logistic Regression achieved the strongest classification performance, with **99.65% accuracy** and a **0.9805 CV F1 Macro Score**, substantially outperforming the majority-class baseline.
+
+**Visualisation:**  
+- visuals/classification_confusion_matrix.png
+
+### Regression
+
+Random Forest achieved the best regression performance, with an **R² of 0.9229**, **RMSE of 5.4671**, and **MAE of 3.9610**.
+
+### Key Findings
+
+Feature importance analysis identified **Mindfulness**, **Nutrition Score**, and **Smoking** as the most influential predictors across both classification and regression models.
+
+As the health outcomes are derived from the same lifestyle variables used as inputs, these results demonstrate how well the models reproduce the dataset's constructed relationships and should not be interpreted as evidence of real-world health prediction.
+
+### Additional Results
+
+- outputs/classification_model_comparison.csv
+- outputs/regression_model_comparison.csv
+- outputs/regression_model_metrics.csv
+- outputs/classification_feature_importance.csv
+- outputs/regression_feature_importance.csv
+
+---
+
+# <u>**Dashboard Creation**</u>
+
+**Live Dashboard Link:** https://public.tableau.com/views/HolisticHealthLifestyleAnalysis/00-Coverpage
 
 The Tableau dashboard was designed to communicate the findings of the exploratory data analysis and machine-learning investigation using a synthetic health and lifestyle dataset. A dedicated cover page introduces the project's research questions, analytical purpose and ethical considerations. Across the dashboards, explanatory text contextualises observed relationships, highlights differences between smoking groups, and communicates the limitations of predictive modelling.
 
@@ -134,11 +287,18 @@ The dashboard explores associations between physical activity, nutrition and ove
 
 Together, these visualisations investigate how lifestyle variables relate to the dataset's formula-derived health scores and how effectively those patterns can be classified. Ethical disclosures emphasise that statistical associations do not establish causation, feature importance does not demonstrate causal influence, and model performance within synthetic data cannot be assumed to generalise to real-world populations. The dashboard is intended for educational and portfolio purposes, not medical advice or clinical decision-making.
 
-#### **Dashboard Features**
+## Dashboard Features
 
-### Dashboard Features
-
-**Live Dashboard Link:** https://public.tableau.com/views/HolisticHealthLifestyleAnalysis/00-Coverpage
+| Feature | What users can explore | Why it is useful |
+| --- | --- | --- |
+| Lifestyle associations | Scatter plots and trend lines for activity, nutrition and health score | Shows the direction and variation of observed relationships |
+| Trends and distributions | Line charts and histograms across activity and nutrition ranges | Places averages alongside the distribution of records |
+| Smoking-group comparison | Average-score KPIs, a box plot and a health-status comparison table | Compares group averages, spread and category representation |
+| Model evaluation | Model-accuracy comparisons and feature importance | Communicates predictive performance and model-specific input rankings |
+| KPI cards | Key numerical summaries for selected groups | Makes headline values easy to locate |
+| Interactive exploration | Tooltips and dashboard interactions | Supports closer examination of categories and score ranges |
+| Ethical disclosure | Explanations of synthetic data, bias and predictive reliability | Helps prevent causal or clinical overinterpretation |
+| Visual design | Turquoise, orange and charcoal palette, annotations and consistent layouts | Supports readable navigation and comparison |
 
 **Dashboard Pages**
 
@@ -163,17 +323,148 @@ Compare average health scores between smokers and non-smokers using KPI cards, a
 ![Holistic Lifestyles and Wellbeing and Dashboard](tableau_dashboard/03-smoking.jpeg)
 
 **Page 4 — A Healthy Guess?**
-Evaluate classification model performance in predicting Poor, Average and Good health-status categories. Compare model accuracy and examine feature importance to identify which lifestyle variables contribute most to predictions, while acknowledging the limitations of synthetic data and the risks of overinterpreting model results.
+Compare model accuracy between Baseline, Logistic Regression and Random Forest classification and examine Random Forest feature importance to identify which lifestyle variables contribute most to predictions, while acknowledging the limitations of synthetic data and the risks of overinterpreting model results.
 
 ![Holistic Lifestyles and Wellbeing and Dashboard](tableau_dashboard/04-predictive-model.jpeg)
 
-## **<u>Technologies Used</u>**
+## Project Management and Development Roadmap
 
-## **<u>Project Management</u>**
+### Our Team Commitment
 
-## **<u>Development Roadmap</u>**
+We approached this project as five contributors working towards one
+shared outcome: a clear, reliable and responsibly interpreted analysis
+of lifestyle patterns within a synthetic health dataset.
 
-## **<u>AI Usage</u>**
+We agreed our responsibilities together, giving each member ownership
+of a defined part of the project while recognising that every stage
+depended on the work of others. Data preparation supported exploration;
+exploration informed further investigation; statistical testing and
+machine learning provided findings for the dashboard and documentation.
+
+Our commitment was to contribute actively, communicate clearly, support
+one another and take shared responsibility for the quality of the final
+project. Individual ownership gave us direction, while collaboration
+helped bring the separate contributions into one coherent analysis.
+
+### Shared Project Goals
+
+| Goal | What this meant for our work |
+| --- | --- |
+| Establish reliable inputs | Inspect, document and validate the dataset before using it for analysis |
+| Answer clear research questions | Connect exploratory findings, statistical tests and predictive modelling to the project aim |
+| Make results understandable | Use appropriate charts, explanations and an interactive dashboard |
+| Interpret findings responsibly | Distinguish patterns in synthetic data from evidence about real-world health |
+| Maintain traceable work | Use GitHub issues, branches, commits and pull requests to organise contributions |
+| Deliver a consistent project | Align notebooks, exported results, visualisations, documentation and presentation materials |
+
+### Team Involvement and Responsibilities
+
+The following responsibilities reflect our agreed allocation, with the
+final README handover noted below.
+
+| Team member | Primary responsibility | Contribution and deliverables |
+| --- | --- | --- |
+| **Liene** | Data preparation, cleaning and GitHub management | Investigated the dataset, created the data dictionary, checked the scoring formula, validated data quality, exported the cleaned dataset and managed repository organisation and integration. Took over final README completion following the documentation handover. |
+| **Kavitha** | Exploratory Data Analysis | Examined distributions, descriptive statistics and relationships between variables; produced EDA visualisations and findings to support subsequent analysis. |
+| **Nadjat** | Hypothesis testing | Developed and investigated statistical hypotheses, selected appropriate tests, carried out sensitivity checks and documented the interpretation of results. |
+| **Hema** | Machine learning | Prepared model inputs, compared classification and regression models, evaluated predictive performance and documented model interpretation and limitations. |
+| **Viktoria** | Dashboard development and initial documentation coordination | Developed the Tableau dashboard, brought together findings and visualisations, and coordinated the initial README contribution before handing final completion to Liene. |
+| **Entire team** | Shared direction, review and communication | Contributed to the project aim, dataset selection, responsibilities, ethical considerations, review and preparation for the final presentation. |
+
+
+**Documentation handover:** Viktoria initially coordinated the README.
+Liene subsequently took responsibility for completing and organising
+the final document, drawing on the team's analytical contributions.
+
+### Agreed Peer Review Plan
+
+The team agreement established a review cycle so that each person's
+work had a named reviewer. This allocation describes the review plan,
+rather than claiming that every review has been completed.
+
+| Work produced by | Assigned reviewer |
+| --- | --- |
+| Liene | Kavitha |
+| Kavitha | Nadjat |
+| Nadjat | Hema |
+| Hema | Viktoria |
+| Viktoria | Liene |
+
+The review priorities were to check clarity, consistency and the
+connection between methods, outputs and conclusions. Shared review
+also provided an opportunity to identify missing explanations or
+integration problems before final delivery.
+
+### Development Roadmap
+
+The roadmap shows how the work was organised and how the deliverables
+connect. Some activities could progress in parallel once the cleaned
+dataset was available; documentation and review supported multiple stages.
+
+
+| Stage | Focus | Lead responsibility | Deliverable and handover |
+| --- | --- | --- | --- |
+| **1. Agree the direction** | Define the project aim, choose the dataset and agree responsibilities | Entire team | Shared research direction, issue allocation and team agreement |
+| **2. Inspect and prepare** | Investigate variables, document definitions, check the score calculation and validate data quality | Liene | Data dictionary, cleaning notebook and validated dataset for downstream analysis |
+| **3. Explore the data** | Examine distributions, correlations and differences between health-status groups | Kavitha | EDA notebook, seven visualisations and findings to inform investigation |
+| **4. Test the hypotheses** | Assess activity and nutrition associations and compare smoking groups | Nadjat | Statistical results, sensitivity checks and evidence-based conclusions |
+| **5. Evaluate predictive models** | Compare baseline, classification and regression models | Hema | Model comparisons, evaluation metrics, feature importances and exported results |
+| **6. Communicate findings** | Build the Tableau dashboard and organise the README | Viktoria; Liene for final README completion | Accessible visual explanations and documentation linked to the analysis |
+| **7. Prepare communication materials** | Develop presentation assets and organise project delivery materials | Viktoria | Project presentation, supporting visuals, speaking materials and final dashboard presentation assets |
+| **8. Review and present** | Check consistency, review the repository and prepare the final presentation | Entire team | A coordinated final explanation of the methods, findings and limitations |
+
+### Team AI Use Statement
+
+As a team, we used AI tools including ChatGPT, Claude, Gemini, and Microsoft Copilot to support various stages of the project. AI was used to help understand the dataset, plan the analysis, troubleshoot coding and GitHub issues, explain statistical methods, debug errors, improve documentation, assist with dashboard and presentation planning, and suggest suitable data visualisations and approaches.
+
+AI support was used as a learning, guidance, and productivity tool rather than as a source of project findings. All code, analyses, visualisations, statistical outputs, interpretations, and documentation were reviewed by team members and checked against the dataset, notebook outputs, and project requirements before being included in the final submission. Final decisions, validation, and responsibility for the project remained with the team.
+
+---
+
+## Technologies, Tools and Credits
+
+The project was completed using the following technologies, platforms, libraries, and AI-assisted tools:
+
+### Development and Collaboration
+
+- Python
+- Jupyter Notebook
+- VS Code
+- Git
+- GitHub
+- Markdown
+
+### Data Analysis and Statistics
+
+- pandas
+- NumPy
+- SciPy
+- scikit-learn
+
+### Data Visualisation
+
+- Matplotlib
+- Seaborn
+- Tableau
+
+### Documentation and Presentation
+
+- Markdown
+- Google Slides
+- Microsoft PowerPoint
+
+### AI-Assisted Tools
+
+- ChatGPT
+- Claude
+- Gemini
+- Microsoft Copilot
+
+### Purpose of the Tools
+
+These technologies were used for dataset inspection, cleaning, validation, exploratory data analysis, statistical testing, machine learning, dashboard development, project documentation, version control, team collaboration, and presentation preparation. AI tools were used to support learning, problem-solving, troubleshooting, planning, code explanation, documentation improvement, and communication of project findings.
+
+---
 
 ## **<u>Ethical Considerations</u>** 
 
@@ -185,7 +476,13 @@ The dataset's synthetic nature is central to interpreting the findings. Although
 
 Ultimately, the project highlights the distinction between identifying statistical patterns and establishing meaningful evidence about human wellbeing. Numerical scores can make complex information easier to analyse, but their interpretation depends on the assumptions, definitions and calculations underlying them. The findings are therefore intended for educational and exploratory purposes, not clinical assessment or healthcare decision-making.
 
-## **<u>Credits</u>**
-
 ## **<u>Acknowledgements</u>**
 
+We would like to thank the entire Code Institute team for their
+guidance, encouragement and support throughout these four months,
+and our fellow students for sharing the learning journey with us.
+
+A special thank you to our team—Liene, Kavitha, Nadjat, Hema and
+Viktoria—for the hard work, patience and support we gave one
+another. Everyone brought something valuable to this project,
+and we are proud of what we have achieved together.
