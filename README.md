@@ -359,22 +359,20 @@ helped bring the separate contributions into one coherent analysis.
 
 ### Team Involvement and Responsibilities
 
-The following responsibilities reflect our agreed allocation, with the
-final README handover noted below.
+The following responsibilities reflect our agreed allocation with README collaboration noted. 
 
 | Team member | Primary responsibility | Contribution and deliverables |
 | --- | --- | --- |
-| **Liene** | Data preparation, cleaning and GitHub management | Investigated the dataset, created the data dictionary, checked the scoring formula, validated data quality, exported the cleaned dataset and managed repository organisation and integration. Took over final README completion following the documentation handover. |
+| **Liene** | Data preparation, cleaning, GitHub management and README format | Investigated the dataset, created the data dictionary, checked the scoring formula, validated data quality, exported the cleaned dataset and managed repository organisation and integration. Collaborated on the README by organizing the final layout, creating summary tables, and reviewing text prior to final data auditing. |
 | **Kavitha** | Exploratory Data Analysis | Examined distributions, descriptive statistics and relationships between variables; produced EDA visualisations and findings to support subsequent analysis. |
 | **Nadjat** | Hypothesis testing | Developed and investigated statistical hypotheses, selected appropriate tests, carried out sensitivity checks and documented the interpretation of results. |
-| **Hema** | Machine learning | Prepared model inputs, compared classification and regression models, evaluated predictive performance and documented model interpretation and limitations. |
-| **Viktoria** | Dashboard development and initial documentation coordination | Developed the Tableau dashboard, brought together findings and visualisations, and coordinated the initial README contribution before handing final completion to Liene. |
-| **Entire team** | Shared direction, review and communication | Contributed to the project aim, dataset selection, responsibilities, ethical considerations, review and preparation for the final presentation. |
+| **Hema** | Machine learning, final quality assurance audit | Prepared model inputs, compared classification and regression models, evaluated predictive performance and documented model interpretation and limitations. Audited data consistency between dashboard, CSV outputs and final documentation. |
+| **Viktoria** | Dashboard development, initial README drafting, presentation coordination and final quality assurance audit  | Built the Tableau dashboard using cleaned dataset and combining findings from the EDA, Hypothesis Testing, and ML notebooks. Coordinated presentation delivery for the team and produced visual assets. Collaborated with entire team on README. Audited data consistency across dashboard, CSV outputs and final documentation. |
+| **Entire team** | Shared direction, review and communication | Contributed to the project aim, dataset selection, responsibilities, ethical considerations, README and Tableau collaboration, review and preparation for the final presentation. |
 
+**Drafting & Content:** Viktoria led the initial README drafting and authored core technical sections in collaboration with Kavitha, Nadjat, Hema, and Liene.
 
-**Documentation handover:** Viktoria initially coordinated the README.
-Liene subsequently took responsibility for completing and organising
-the final document, drawing on the team's analytical contributions.
+**Formatting & Audit:** Liene organized the final layout, summary tables, and text compression, followed by a final audit by Hema and Viktoria to verify data quality assurance across all notebooks, CSV outputs, and the Tableau dashboard.
 
 ### Agreed Peer Review Plan
 
@@ -409,7 +407,7 @@ dataset was available; documentation and review supported multiple stages.
 | **3. Explore the data** | Examine distributions, correlations and differences between health-status groups | Kavitha | EDA notebook, seven visualisations and findings to inform investigation |
 | **4. Test the hypotheses** | Assess activity and nutrition associations and compare smoking groups | Nadjat | Statistical results, sensitivity checks and evidence-based conclusions |
 | **5. Evaluate predictive models** | Compare baseline, classification and regression models | Hema | Model comparisons, evaluation metrics, feature importances and exported results |
-| **6. Communicate findings** | Build the Tableau dashboard and organise the README | Viktoria; Liene for final README completion | Accessible visual explanations and documentation linked to the analysis |
+| **6. Communicate findings** | Build Tableau dashboard, README content & quality assurance audit | Viktoria (Dashboard, intial README content in collaboration with entire team); Liene (README Layout formatting & tables); Hema and Viktoria (final audit) |
 | **7. Prepare communication materials** | Develop presentation assets and organise project delivery materials | Viktoria | Project presentation, supporting visuals, speaking materials and final dashboard presentation assets |
 | **8. Review and present** | Check consistency, review the repository and prepare the final presentation | Entire team | A coordinated final explanation of the methods, findings and limitations |
 
