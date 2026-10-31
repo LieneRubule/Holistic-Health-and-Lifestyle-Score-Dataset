@@ -407,7 +407,7 @@ dataset was available; documentation and review supported multiple stages.
 | **3. Explore the data** | Examine distributions, correlations and differences between health-status groups | Kavitha | EDA notebook, seven visualisations and findings to inform investigation |
 | **4. Test the hypotheses** | Assess activity and nutrition associations and compare smoking groups | Nadjat | Statistical results, sensitivity checks and evidence-based conclusions |
 | **5. Evaluate predictive models** | Compare baseline, classification and regression models | Hema | Model comparisons, evaluation metrics, feature importances and exported results |
-| **6. Communicate findings** | Build Tableau dashboard, README content & quality assurance audit | Viktoria (Dashboard, intial README content in collaboration with entire team); Liene (README Layout formatting & tables); Hema and Viktoria (final audit) |
+| **6. Communicate findings** | Build Tableau dashboard, README content & quality assurance audit | Viktoria (Dashboard, intial README content in collaboration with entire team); Liene (README Layout formatting & tables); Hema and Viktoria (final audit) | Tableau dashboard and README file |
 | **7. Prepare communication materials** | Develop presentation assets and organise project delivery materials | Viktoria | Project presentation, supporting visuals, speaking materials and final dashboard presentation assets |
 | **8. Review and present** | Check consistency, review the repository and prepare the final presentation | Entire team | A coordinated final explanation of the methods, findings and limitations |
 
